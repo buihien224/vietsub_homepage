@@ -46,48 +46,54 @@ window.znRespondToVisibility = function(e, t) {
 znReady(function() {
     (function() {
         (function() {
-            var e = document.getElementById("znid-157939816564"),
-                t = null != document.querySelector(".zn-container.editing");
-            function n(e, t, n) {
-                this.addEventListener("click", (function() {
-                    i(e + encodeURIComponent(t), n)
-                }))
+            var e = document.getElementById("znid-617913929794"),
+                t = e.querySelector(".zn-popup"),
+                n = t.querySelector(":scope > button"),
+                i = t.querySelector(":scope > .zn-popup-overlay"),
+                a = i.querySelector(":scope > .zn-popup-mask"),
+                o = "false",
+                r = 1e3 * parseFloat("5s"),
+                s = null != document.querySelector(".zn-container.editing");
+            function l() {
+                i.classList.add("active")
             }
-            function i(e, t) {
-                var n = (screen.width - 640) / 2,
-                    i = (screen.height - 640) / 2,
-                    a = "menubar=no,toolbar=no,status=no,width=640,height=640,top=" + i + ",left=" + n;
-                "_blank" == t ? window.open(e) : "_self" == t ? window.location = e : window.open(e, t, a)
+            function c() {
+                i.classList.remove("active")
             }
-            t || e.querySelectorAll(".zn-social-share-item").forEach((function(e) {
-                var t, i = "Share",
-                    a = "current",
-                    o = "custom" == a,
-                    r = "",
-                    s = "Check out my awesome shop!",
-                    l = o && r ? r : document.URL,
-                    c = !0,
-                    p = e.getAttribute("ref-name");
-                switch (p) {
-                    case "facebook":
-                        t = "https://www.facebook.com/sharer.php?quote=" + s + "&u=";
-                        break;
-                    case "twitter":
-                        t = "https://twitter.com/intent/tweet?text=" + s + "&url=";
-                        break;
-                    case "pinterest":
-                        t = "http://pinterest.com/pin/create/button/?description=" + s + "&url=";
-                        break;
-                    case "linkedin":
-                        t = "https://www.linkedin.com/shareArticle?mini=true&url=";
-                        break;
-                    case "email":
-                        var d = "mailto:?body=" + s + " " + l;
-                        e.setAttribute("href", d), c = !1;
-                        break
+            n.addEventListener("click", l), a.addEventListener("click", c), "true" != o || s || setTimeout(l, r)
+        })();
+        (function() {
+            (function() {
+                var e = "normal",
+                    t = "true",
+                    n = "true",
+                    i = "1",
+                    a = "1",
+                    o = "500",
+                    r = "false",
+                    s = "3000",
+                    l = document.getElementById("znid-675653179338"),
+                    c = !1;
+                function p() {
+                    new Splide("#znid-675653179338 > .zn-element > .zn-slider > .splide", {
+                        type: "loop" == e ? "loop" : "slide",
+                        rewind: "rewind" == e,
+                        perPage: +i,
+                        perMove: +a,
+                        speed: +o,
+                        height: "auto",
+                        gap: "10px",
+                        arrows: "true" == t,
+                        pagination: "true" == n,
+                        autoplay: "true" == r,
+                        interval: +s,
+                        arrowPath: "M 30.375 18.714844 L 12.195312 0.53125 C 11.484375 -0.175781 10.332031 -0.175781 9.625 0.53125 C 8.914062 1.242188 8.914062 2.394531 9.625 3.105469 L 26.519531 20 L 9.625 36.894531 C 8.914062 37.605469 8.914062 38.757812 9.625 39.46875 C 9.976562 39.824219 10.445312 40 10.910156 40 C 11.375 40 11.839844 39.824219 12.195312 39.46875 L 30.375 21.285156 C 30.71875 20.945312 30.910156 20.480469 30.910156 20 C 30.910156 19.515625 30.71875 19.054688 30.375 18.714844 Z M 30.375 18.714844"
+                    }).mount()
                 }
-                c && e && n.call(e, t, l, i)
-            }))
+                window.znRespondToVisibility(l, (function(e) {
+                    e && !c && (p(), c = !0)
+                }))
+            })();
         })();
     })();
     (function() {
