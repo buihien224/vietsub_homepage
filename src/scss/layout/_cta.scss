@@ -1,21 +1,16 @@
-.newsletter {
+.cta {
 
     .section-paragraph {
         margin-bottom: 32px;
     }
 }
 
-.newsletter-form {
-    max-width: 440px;
-    margin: 0 auto;
-}
-
 @include media( '>medium' ) {
 
-    .newsletter {
+    .cta {
 
         .section-paragraph {
-            margin-bottom: 40px;
+            margin-bottom: 32px;
             padding-left: 72px;
             padding-right: 72px;
         }

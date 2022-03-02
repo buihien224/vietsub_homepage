@@ -48,7 +48,7 @@
 	            @include font-size(8, desktop, true, false, true);
 	        }
 	    }
-	    @include font-weight(bold);
+	    @include font-weight(semibold);
 	    line-height: 16px;
 	    text-decoration: none;
 		text-transform: uppercase;
@@ -57,7 +57,7 @@
 	    border: none;
 		height: auto;
 		left: 8px;
-		padding: 16px 32px;
+		padding: 16px 40px;
 		top: 8px;
 		width: auto;
 		z-index: 100000;
